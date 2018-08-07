@@ -1,0 +1,14 @@
+{
+  "name": "myvue",
+  "version": "1.0.0",
+  "description": "Learning Vue",
+  "author": "Denis Popov",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "gulp serve"
+  },
+  "dependencies": {
+    "browser-sync": "^2.24.6",
+    "gulp": "^4.0.0"
+  }
+}
