@@ -20,6 +20,11 @@ var app = new Vue({
             variantColor: 'blue'
           }
         ],
-        sizes: [44, 45]
+        cart: 0
+    },
+    methods: {
+      addToCart() {
+        this.cart++
+      }
     }
 });

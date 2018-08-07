@@ -24,10 +24,10 @@
         <div>
           <p v-for="variant in variants" :key="variant.variantId">{{ variant.variantColor}}</p>
         </div>
-        <ul>
-          <li v-for="size in sizes">{{ size }}</li>
-        </ul>
-        <a :href="link">More socks see here</a>
+        <button type="button" v-on:click="addToCart">Add to cart</button>
+        <div class="cart">
+          <p>Cart {{ cart }}</p>
+        </div>
       </div>
     </div>
   </div>
