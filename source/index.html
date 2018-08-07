@@ -7,7 +7,6 @@
 </head>
 <body>
   <div class="nav-bar"></div>
-  
   <div id="app">
     <div class="product">
       <div class="product-image">
@@ -15,6 +14,9 @@
       </div>
       <div class="product-info">
         <h1>{{ product }}</h1>
+        <p v-if="inventory > 10">In Stock</p>
+        <p v-else-if="inventory > 0 && inventory < 10">Almost sold out!</p>
+        <p v-else>Out of Stock</p>
         <a :href="link">More socks see here</a>
       </div>
     </div>

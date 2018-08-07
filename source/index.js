@@ -6,6 +6,7 @@ var app = new Vue({
         product: 'Socks',
         image: './img/vmSocks-green-onWhite.jpg',
         alt: 'Amazing socks',
-        link: 'https://www.yandex.ru/search/?text=socks%20&lr=43&rnd=92501'
+        link: 'https://www.yandex.ru/search/?text=socks%20&lr=43&rnd=92501',
+        inventory: 8
     }
 });
