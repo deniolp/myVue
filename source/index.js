@@ -12,6 +12,7 @@ Vue.component('product', {
         <p v-if="inStock">In Stock</p>
         <p v-else>Out of Stock</p>
         <p>{{ sale }}</p>
+        <p>User is premium: {{ shipping }}</p>
 
         <ul>
           <li v-for="detail in details">{{ detail }}</li>
@@ -36,6 +37,11 @@ Vue.component('product', {
 
     </div>
   `,
+  props: {
+    premium: {
+      type: Boolean
+    }
+  },
   data() {
     return {
       product: "Socks",
@@ -84,10 +90,20 @@ Vue.component('product', {
         return this.brand + " " + this.product + " " + "are on sale!";
       }
       return this.brand + " " + this.product + " " + "are not on sale!";
+    },
+    shipping() {
+      if (this.premium) {
+        return 'Free'
+      } else {
+        return 2.99
+      }
     }
   }
 });
 
 var app = new Vue({
-  el: "#app"
+  el: "#app",
+  data: {
+    premium: true
+  }
 });
