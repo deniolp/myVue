@@ -6,7 +6,6 @@ var app = new Vue({
         product: 'Socks',
         image: './img/vmSocks-green-onWhite.jpg',
         alt: 'Amazing socks',
-        link: 'https://www.yandex.ru/search/?text=socks%20&lr=43&rnd=92501',
         inventory: 8,
         onSale: true,
         details: ['80% cotton', '20% polyester', 'Gender-neutral'],
@@ -29,7 +28,7 @@ var app = new Vue({
         this.cart++
       },
       removeFromCart() {
-      this.cart -= 1
+        this.cart--
       },
       updateProduct(variantImage) {
         this.image = variantImage;
