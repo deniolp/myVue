@@ -1,4 +1,23 @@
+Vue.component('product-details', {
+  props: {
+    details: {
+      type: Array,
+      required: true
+    }
+  },
+  template: `
+    <ul>
+      <li v-for="detail in details">{{ detail }}</li>
+    </ul>
+  `
+});
+
 Vue.component('product', {
+  props: {
+    premium: {
+      type: Boolean
+    }
+  },
   template: `
     <div class="product">
 
@@ -12,11 +31,9 @@ Vue.component('product', {
         <p v-if="inStock">In Stock</p>
         <p v-else>Out of Stock</p>
         <p>{{ sale }}</p>
-        <p>User is premium: {{ shipping }}</p>
-
-        <ul>
-          <li v-for="detail in details">{{ detail }}</li>
-        </ul>
+        <p>Shipping: {{ shipping }}</p>
+        
+        <product-details :details="details"></product-details>
 
         <div class="color-box" v-for="(variant, index) in variants"
            :key="variant.variantId"
@@ -37,11 +54,6 @@ Vue.component('product', {
 
     </div>
   `,
-  props: {
-    premium: {
-      type: Boolean
-    }
-  },
   data() {
     return {
       product: "Socks",
