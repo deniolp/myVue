@@ -59,7 +59,6 @@ Vue.component('product', {
       brand: "Vue Mastery",
       selectedVariant: 0,
       alt: "Amazing socks",
-      cart: 0,
       details: ["80% cotton", "20% polyester", "Gender-neutral"],
       variants: [{
           variantId: 2234,
