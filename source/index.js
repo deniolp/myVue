@@ -45,6 +45,9 @@ Vue.component('product', {
           :disabled="!inStock"
           :class="{ disabledButton: !inStock }">Add to cart
         </button>
+        
+        <button v-on:click="removeFromCart">Remove from cart
+        </button>
 
       </div>
 
@@ -69,7 +72,7 @@ Vue.component('product', {
           variantId: 2235,
           variantColor: "blue",
           variantImage: "./img/vmSocks-blue-onWhite.jpg",
-          variantQuantity: 0,
+          variantQuantity: 3,
           variantSale: false
         }
       ]
@@ -78,6 +81,9 @@ Vue.component('product', {
   methods: {
     addToCart() {
       this.$emit('add-to-cart', this.variants[this.selectedVariant].variantId);
+    },
+    removeFromCart() {
+      this.$emit('remove-from-cart', this.variants[this.selectedVariant].variantId);
     },
     updateProduct(index) {
       this.selectedVariant = index;
@@ -118,6 +124,14 @@ var app = new Vue({
   methods: {
     updateCart(id) {
       this.cart.push(id);
+    },
+    removeItem(id) {
+      for (var i = 0; i < this.cart.length; i++) {
+        if (this.cart[i] === id) {
+          this.cart.splice(i, 1);
+          break;
+        }
+      }
     }
   }
 });
