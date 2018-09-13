@@ -22,7 +22,7 @@ Vue.component('product', {
     <div class="product">
 
       <div class="product-image">
-        <img v-bind:src="image" v-bind:alt="alt">
+        <img v-bind:src="image" v-bind:alt="alt" class="image">
       </div>
 
       <div class="product-info">
@@ -71,7 +71,7 @@ Vue.component('product', {
           variantId: 2235,
           variantColor: "blue",
           variantImage: "./img/vmSocks-blue-onWhite.jpg",
-          variantQuantity: 3,
+          variantQuantity: 0,
           variantSale: false
         }
       ]
