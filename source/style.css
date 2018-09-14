@@ -31,6 +31,8 @@ body {
  
  .image {
    position: absolute;
+   top: 40px;
+   left: 40px;
  }
  
  .product-info {
